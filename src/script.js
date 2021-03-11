@@ -1,8 +1,8 @@
 import './style.css'
 // import three.js in script
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import * as THREE from "../three";
+import { OrbitControls } from "../three/examples/jsm/controls/OrbitControls.js";
+import { GLTFLoader } from "../three/examples/jsm/loaders/GLTFLoader.js";
 
 // create a scene
 const scene = new THREE.Scene();
@@ -78,7 +78,7 @@ cube.castShadow = true;
 const loader = new GLTFLoader();
 
 loader.load(
-  "three/examples/models/gltf/Duck/glTF-Binary/Duck.glb",
+  "../three/examples/models/gltf/Duck/glTF-Binary/Duck.glb",
   function (loadedModel) {
     scene.add(loadedModel.scene);
   },
@@ -90,7 +90,7 @@ loader.load(
 
 var chair;
 loader.load(
-    "models/chair.gltf",
+    "../static/models/chair.gltf",
     function (loadedModel) {
       chair = loadedModel.scene;
       chair.position.set(0,1,1);
